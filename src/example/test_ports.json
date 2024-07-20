@@ -1,0 +1,221 @@
+[
+    {
+        "Que": "What is the port number for AFP?",
+        "Ans": [
+            "110",
+            "138",
+            "548",
+            "3389"
+        ],
+        "Correct": [
+            false,false,true,false
+        ]
+    },
+    {
+        "Que": "What is the port number for DHCP?",
+        "Ans": [
+            "67",
+            "68",
+            "21",
+            "22"
+
+        ],
+        "Correct": [
+            true,
+            true,
+            false,
+            false
+        ]
+    },
+    {
+        "Que": "What is the port number for DNS?",
+        "Ans": [
+            "139",
+            "445",
+            "53",
+            "25"
+
+        ],
+        "Correct": [
+            false,false,true,false
+        ]
+    },
+    {
+        "Que": "What is the port number for FTP?",
+        "Ans": [
+            "21",
+            "22",
+            "161",
+            "143"
+
+        ],
+        "Correct": [
+            false,true,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for HTTP?",
+        "Ans": [
+            "443",
+            "8443",
+            "162",
+            "80"
+        ],
+        "Correct": [
+            false,false,false,true
+        ]
+    },
+    {
+        "Que": "What is the port number for HTTPS?",
+        "Ans": [
+            "443",
+            "8443",
+            "162",
+            "80"
+        ],
+        "Correct": [
+            true,false,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for IMAP?",
+        "Ans": [
+            "636",
+            "143",
+            "389",
+            "993"
+        ],
+        "Correct": [
+            true
+        ]
+    },
+    {
+        "Que": "What is the port number for LDAP?",
+        "Ans": [
+            "161",
+            "389",
+            "110",
+            "445"
+        ],
+        "Correct": [
+            false,true,false,false
+        ]
+    },
+    {
+        "Que": "What are the port numbers for NetBIOS/NetBT?",
+        "Ans": [
+            "137",
+            "138",
+            "143",
+            "139"
+        ],
+        "Correct": [
+            true,
+            true,
+            false,
+            true
+        ]
+    },
+    {
+        "Que": "What is the port number for POP3?",
+        "Ans": [
+            "161",
+            "162",
+            "110",
+            "69"
+
+        ],
+        "Correct": [
+            true,true,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for RDP?",
+        "Ans": [
+            "3389",
+            "5004",
+            "990",
+            "989"
+        ],
+        "Correct": [
+            true,false,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for SLP?",
+        "Ans": [
+            "1720",
+            "427",
+            "123",
+            "80"
+        ],
+        "Correct": [
+            true
+        ]
+    },
+    {
+        "Que": "What is the port number for SMB/CIFS?",
+        "Ans": [
+            "443",
+            "445",
+            "993",
+            "22"
+        ],
+        "Correct": [
+            false,true,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for SMTP?",
+        "Ans": [
+            "22",
+            "21",
+            "23",
+            "25"
+
+        ],
+        "Correct": [
+            false,false,false,true
+        ]
+    },
+    {
+        "Que": "What are the port numbers for SNMP?",
+        "Ans": [
+            "67",
+            "68",
+            "161",
+            "162"
+            
+        ],
+        "Correct": [
+            false,
+            false,
+            true,
+            true
+        ]
+    },
+    {
+        "Que": "What is the port number for SSH?",
+        "Ans": [
+            "22",
+            "21",
+            "25",
+            "23"
+        ],
+        "Correct": [
+            true,false,false,false
+        ]
+    },
+    {
+        "Que": "What is the port number for Telnet?",
+        "Ans": [
+            "22",
+            "21",
+            "25",
+            "23"
+        ],
+        "Correct": [
+            false,false,false,true
+        ]
+    }
+]

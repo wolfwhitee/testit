@@ -1,0 +1,32 @@
+[
+    {
+        "Que": "What is SSH port number",
+        "Ans": [
+            "25",
+            "443",
+            "22",
+            "69"
+        ],
+        "Correct": [
+            false,
+            false,
+            true,
+            false
+        ]
+    },
+    {
+        "Que": "What is FTP port number",
+        "Ans": [
+            "44",
+            "1025",
+            "20",
+            "21"
+        ],
+        "Correct": [
+            false,
+            false,
+            true,
+            true
+        ]
+    }
+]
