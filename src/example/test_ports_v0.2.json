@@ -1,0 +1,23 @@
+{
+    "metadata": {
+        "version" : "0.2",
+        "author" : "Wolf"
+    },
+    "config" : {
+        "rand_questions": true,
+        "rand_answers": true,
+        "rand_max_answers" : 4,
+        "rand_min_answers" : 6,
+        "rand_set_answers" : ["21","22","23","25","67","110","138","548","3389"]
+    },
+    "content": [
+        {
+            "que": "What is the port number for AFP?",
+            "ans": ["548"]
+        },
+        {
+            "que": "What is the port number for DHCP?",
+            "ans": ["67","68"]
+        }
+    ]
+}

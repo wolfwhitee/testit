@@ -20,7 +20,3 @@ impl TestQAC {
             &self.correct
     }
 }
-
-pub fn showinfo() {
-    print!("Structure [loaded!]")
-}

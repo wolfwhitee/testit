@@ -1,26 +1,26 @@
 [
     {
-        "Que": "What is the port number for AFP?",
-        "Ans": [
+        "que": "What is the port number for AFP?",
+        "ans": [
             "110",
             "138",
             "548",
             "3389"
         ],
-        "Correct": [
+        "correct": [
             false,false,true,false
         ]
     },
     {
-        "Que": "What is the port number for DHCP?",
-        "Ans": [
+        "que": "What is the port number for DHCP?",
+        "ans": [
             "67",
             "68",
             "21",
             "22"
 
         ],
-        "Correct": [
+        "correct": [
             true,
             true,
             false,
@@ -28,88 +28,88 @@
         ]
     },
     {
-        "Que": "What is the port number for DNS?",
-        "Ans": [
+        "que": "What is the port number for DNS?",
+        "ans": [
             "139",
             "445",
             "53",
             "25"
 
         ],
-        "Correct": [
+        "correct": [
             false,false,true,false
         ]
     },
     {
-        "Que": "What is the port number for FTP?",
-        "Ans": [
+        "que": "What is the port number for FTP?",
+        "ans": [
             "21",
             "22",
             "161",
             "143"
 
         ],
-        "Correct": [
+        "correct": [
             false,true,false,false
         ]
     },
     {
-        "Que": "What is the port number for HTTP?",
-        "Ans": [
+        "que": "What is the port number for HTTP?",
+        "ans": [
             "443",
             "8443",
             "162",
             "80"
         ],
-        "Correct": [
+        "correct": [
             false,false,false,true
         ]
     },
     {
-        "Que": "What is the port number for HTTPS?",
-        "Ans": [
+        "que": "What is the port number for HTTPS?",
+        "ans": [
             "443",
             "8443",
             "162",
             "80"
         ],
-        "Correct": [
+        "correct": [
             true,false,false,false
         ]
     },
     {
-        "Que": "What is the port number for IMAP?",
-        "Ans": [
+        "que": "What is the port number for IMAP?",
+        "ans": [
             "636",
             "143",
             "389",
             "993"
         ],
-        "Correct": [
+        "correct": [
             true
         ]
     },
     {
-        "Que": "What is the port number for LDAP?",
-        "Ans": [
+        "que": "What is the port number for LDAP?",
+        "ans": [
             "161",
             "389",
             "110",
             "445"
         ],
-        "Correct": [
+        "correct": [
             false,true,false,false
         ]
     },
     {
-        "Que": "What are the port numbers for NetBIOS/NetBT?",
-        "Ans": [
+        "que": "What are the port numbers for NetBIOS/NetBT?",
+        "ans": [
             "137",
             "138",
             "143",
             "139"
         ],
-        "Correct": [
+        "correct": [
             true,
             true,
             false,
@@ -117,77 +117,77 @@
         ]
     },
     {
-        "Que": "What is the port number for POP3?",
-        "Ans": [
+        "que": "What is the port number for POP3?",
+        "ans": [
             "161",
             "162",
             "110",
             "69"
 
         ],
-        "Correct": [
+        "correct": [
             true,true,false,false
         ]
     },
     {
-        "Que": "What is the port number for RDP?",
-        "Ans": [
+        "que": "What is the port number for RDP?",
+        "ans": [
             "3389",
             "5004",
             "990",
             "989"
         ],
-        "Correct": [
+        "correct": [
             true,false,false,false
         ]
     },
     {
-        "Que": "What is the port number for SLP?",
-        "Ans": [
+        "que": "What is the port number for SLP?",
+        "ans": [
             "1720",
             "427",
             "123",
             "80"
         ],
-        "Correct": [
+        "correct": [
             true
         ]
     },
     {
-        "Que": "What is the port number for SMB/CIFS?",
-        "Ans": [
+        "que": "What is the port number for SMB/CIFS?",
+        "ans": [
             "443",
             "445",
             "993",
             "22"
         ],
-        "Correct": [
+        "correct": [
             false,true,false,false
         ]
     },
     {
-        "Que": "What is the port number for SMTP?",
-        "Ans": [
+        "que": "What is the port number for SMTP?",
+        "ans": [
             "22",
             "21",
             "23",
             "25"
 
         ],
-        "Correct": [
+        "correct": [
             false,false,false,true
         ]
     },
     {
-        "Que": "What are the port numbers for SNMP?",
-        "Ans": [
+        "que": "What are the port numbers for SNMP?",
+        "ans": [
             "67",
             "68",
             "161",
             "162"
             
         ],
-        "Correct": [
+        "correct": [
             false,
             false,
             true,
@@ -195,26 +195,26 @@
         ]
     },
     {
-        "Que": "What is the port number for SSH?",
-        "Ans": [
+        "que": "What is the port number for SSH?",
+        "ans": [
             "22",
             "21",
             "25",
             "23"
         ],
-        "Correct": [
+        "correct": [
             true,false,false,false
         ]
     },
     {
-        "Que": "What is the port number for Telnet?",
-        "Ans": [
+        "que": "What is the port number for Telnet?",
+        "ans": [
             "22",
             "21",
             "25",
             "23"
         ],
-        "Correct": [
+        "correct": [
             false,false,false,true
         ]
     }
