@@ -2,6 +2,7 @@ use std::{fs::File};
 use std::io::Read;
 use serde_json::Value;
 
+
 use crate::structure::{test_structure::TestQAC, test_structure_adv::TestSet};
 
 pub fn read_file(filename: &str) -> Result<String, std::io::Error> {
@@ -35,7 +36,10 @@ pub fn parse_json_adv(filecontent: &str) -> Result<TestSet, std::io::Error>{
 #[cfg(test)]
 mod tests {
     use super::*;
+    use once_cell::sync::Lazy;
     use tempfile::NamedTempFile;
+    use std::io::Write;
+    
     static CONTENT_TESTSTRUCTURE_V1: Lazy<String> = Lazy::new(|| format!("{}"," 
     [
         {
