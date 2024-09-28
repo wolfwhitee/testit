@@ -1,9 +1,12 @@
 use helpers::argsparser;
 use rand::{thread_rng, seq::SliceRandom};
-use structure::args_structure;
+use testhelpers::querandomizer;
+use testhelpers::querandomizer_b;
 use std::thread;
 use std::sync::{Arc, Mutex};
 use std::io::stdin;
+use std::collections::HashSet;
+use std::collections::HashMap;
 
 mod testloader {
     pub mod loader;   
@@ -23,14 +26,24 @@ mod helpers {
     pub mod argsparser;
 }
 
+mod testhelpers {
+    pub mod querandomizer;
+    pub mod querandomizer_b;
+}
+
 fn main() {
     println!("Main function [loaded!]");
+    println!("Use filepath argument with full path to test file.");
+    println!("-filepath=C:\\some_test_dir_path\\test.json");
+    println!("if not set, loading example test.");
     //start server
     let run_parameters = argsparser::parse().unwrap();
+    println!("Loaded test: {}",run_parameters.get_filepath());
     if run_parameters.get_filepath()!="" {
         let parsed = testloader::loader::read_file(run_parameters.get_filepath()).expect("Error reading file");
         //get unpacked test content as "object"
         let test_version: i8 = testloader::loader::parse_json_probe(&parsed).unwrap();
+        println!("Test version: {}",test_version+1);
         if test_version==0 {
             let mut test_content = testloader::loader::parse_json(&parsed).unwrap();
             //shuffle test quesitions
@@ -65,7 +78,7 @@ fn main() {
                             bad_answers += 1;
                         }
                     } else {
-                        println!("Your answer: {:?} , exit from test.", user_answer);
+                        println!("Your answer: {} , exit from test.", user_answer);
                         break;
                     }
                 }
@@ -81,7 +94,46 @@ fn main() {
             handle.join().unwrap();
         } else if test_version==1 {
             println!("Test V2 is not supported yet");
-            let mut test_content = testloader::loader::parse_json_adv(&parsed).unwrap();
+            let test_content = testloader::loader::parse_json_adv(&parsed).unwrap();
+            let test_config = test_content.get_config().clone();
+            let mut test_content = test_content.get_content().clone();
+            test_content.shuffle(&mut thread_rng());
+            let mut good_answers = 0;
+            let mut  bad_answers = 0;
+            let testlength = test_content.len();
+            println!("Test lenght is: {}",testlength);
+            for element in test_content.iter() {
+                let element:structure::test_structure_adv::Content = element.clone();
+                let question = element.get_que();
+                let answers = element.get_ans().clone();
+                let answers_shafled = querandomizer_b::generate_set_of_answers_b(test_config.get_rand_min_answers().clone(), test_config.get_random_max_answers().clone(), test_config.get_rand_set_answers().clone(), answers.clone()).unwrap();
+                println!("{} :",question);
+                let mut tempMapIndexAns = HashMap::new();
+                for (_i,answer) in answers_shafled.get_ans_set().iter().enumerate() { 
+                    let _answer = answer.clone();
+                    tempMapIndexAns.insert((_i+1).to_string(), answer.to_string());
+                    println!("{}: {:?}",_i+1,answer);
+                }
+                let user_answer = get_user_answer_as_vec(20,tempMapIndexAns).unwrap();
+                if user_answer.get(0).unwrap().clone() != "0".to_string() {
+                    println!("Your answer: {:?} ", user_answer);
+                    println!("Good answer: {:?} ", answers);
+                    let is_correct = are_vecs_equal(user_answer,answers);
+                    if is_correct {
+                        good_answers += 1;
+                    } else {
+                        bad_answers += 1;
+                    }
+                    
+                } else {
+                    println!("Your answer: {:?} , exit from test.", user_answer);
+                    println!("Good answers: {}, bad answers: {}",good_answers,bad_answers);
+                    break;
+                }
+                println!("Good answers: {}, bad answers: {}",good_answers,bad_answers);
+            }
+
+            
         } else {
             println!("Test version not recognized");
         }
@@ -97,5 +149,35 @@ fn get_user_answer(_max_input: usize) -> Result<usize, std::io::Error> {
         Err(_) => Err(std::io::Error::new(std::io::ErrorKind::InvalidInput, "Invalid input")),
     }
 }
+
+fn get_user_answer_as_vec(_max_input: usize, mapping: HashMap<String,String>) -> Result<Vec<String>, std::io::Error> {
+    let mut input = String::new();
+    stdin().read_line(&mut input)?;
+    if input != "0" {
+        let no_spaces: String = input.replace(" ", "");
+        let user_answer_indexes: Vec<String> = no_spaces.split(',').map(|s| s.trim().to_string()).collect();
+        let mut user_answer: Vec<String> = Vec::new();
+        for index in user_answer_indexes {
+            if let Some(value) = mapping.get(&index) {
+                user_answer.push(value.clone());
+            } else {
+                // Handle the case where the key is not found
+                //return Err(io::Error::new(io::ErrorKind::NotFound, "Key not found in mapping"));
+            }
+        }
+        Ok(user_answer)
+    } else {
+        Ok(vec!["0".to_string()])
+    }
+
+}
+
+fn are_vecs_equal(vec1: Vec<String>, vec2: Vec<String>) -> bool {
+    let set1: HashSet<_> = vec1.into_iter().collect();
+    let set2: HashSet<_> = vec2.into_iter().collect();
+    set1 == set2
+}
+
+
 
 
